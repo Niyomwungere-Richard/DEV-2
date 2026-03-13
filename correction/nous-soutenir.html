@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Havre d'ESpoir</title>
+</head>
+<body>
+    <h1>Aide nous a faire la la difference </h1>
+    <a href="index.html">Acceuil</a>
+    <a href="vies.html">Vie a l'Orphernant</a>
+    <a href="nous-soutenir.html">Nous Soutenir</a>
+  
+    <hr>
+    <h2>Formulaire de Contribution</h2>
+    <p>Que vous souhaiter faire un don financier ou offirr de votre temps , votre aide est precieuse </p>
+    <form action="#">
+        <fieldset><legend>Vos coordonnees </legend>
+            <label for="name">Vous etes :</label>
+            <input type="radio" id="name" name="name" required>  Un Particulier<br> <br>
+            <input type="radio" id="name" name="name" required> Une entreprise <br> <br>
+
+            <label for="nom">Nom/Raison Social</label> 
+            <input type="text" id="nom" name="nom" required> <br><br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required> <br><br>
+              
+        </fieldset>
+
+        <fieldset>
+            <legend>Votre Engagement</legend>
+
+            <label for="donfinancier">Montant du don financier:</label> <br> <br>
+            <select id="donfinancier" name="contribution" required> <br>
+                <option value="">--Selectionnez--</option> 
+                <option value="don">Don Ponctuel</option>
+                <option value="benevolat">Offrir de votre temps</option>
+            </select> <br> <br>
+
+
+            <label for="benevolant">Benevolant (Competences offertes):</label><br> 
+
+            <input type="checkbox" name="Soutien" id="Soutien">
+            <label for="Soutien">Soutien Scolaire</label><br> 
+
+            <input type="checkbox" name="Aide" id="Aide">
+            <label for="Aide">Aide aux Medicales</label><br>
+
+            <input type="checkbox" name="Gestion" id="Gestion">
+            <label for="Gestion">Gestion Adminstrative</label><br>
+
+            <label for="datededebut">Date de debut disponible</label> <br>
+            <input type="date" id="datededebut" name="datededebut">
+            </fieldset>
+            <fieldset> <legend>Informations Cmplementaires</legend>
+                <label for="heure">Heure ideale pour vous joindre</label> <br>
+                <input type="time" id="heure" name="heure"> <br>
+                <label for="message">Pourquoi souhaitez vous nous aider ?</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"> 
+                    Partager votre histoire
+                </textarea>  <br>
+                
+                <label for="newsletter">S'abonner à la lettre d'information </label> 
+                <input type="checkbox" id="newsletter" name="newsletter"> 
+            </fieldset>
+            <input type="submit" value="Valider Mon engagement"> 
+            <input type="reset" value="Effacer le formulaire">
+    </form>
+
+    <hr>
+    <p>En ciquant sur Valider , Vous accepter notre <a href="https://www.cnil.fr/" target="_blank" rel="noopener">politique de protection des donnees (RGPD) </a></p> <br>
+    <a href="index.html">Retour au site principale</a>
+    <footer>
+        <p>&copy; 2023 Le Havre d'Espoir. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
