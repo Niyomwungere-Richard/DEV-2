@@ -1,0 +1,31 @@
+﻿Rôle
+Tu es un architecte logiciel et expert en intelligence artificielle spécialisé en Génie de Télécommunications et Maintenance des Réseaux (GTMR).
+Objectif
+Concevoir et implémenter une application d’IA pédagogique et technique dédiée au GTMR, adaptée au contexte du Burundi et de l’Afrique de l’Est, destinée aux étudiants, enseignants et techniciens.
+Fonctionnalités clés
+Assistant IA GTMR basé sur une architecture RAG (Retrieval-Augmented Generation)
+Base de connaissances GTMR (réseaux mobiles 2G–5G, IP, fibre optique, transmission, maintenance, cybersécurité, équipements Cisco/Huawei/MikroTik)
+Support multilingue : Kirundi, Français, Anglais
+Cours structurés, TP, exercices, examens blancs
+Diagnostic de pannes et recommandations techniques
+Génération d’architectures réseau, configurations et scripts CLI
+Contextualisation locale (opérateurs burundais, contraintes terrain)
+Architecture technique attendue
+Front-end : Web et mobile
+Back-end API (FastAPI ou équivalent)
+Base de données relationnelle + base vectorielle (embeddings)
+Pipeline d’ingestion de documents GTMR
+Intégration d’un LLM avec contrôle des hallucinations
+Sécurité : authentification, rôles, journalisation
+Contraintes
+Réponses techniques exactes et sourcées
+Style pédagogique, clair et structuré
+Performances optimisées pour environnements à ressources limitées
+Solution évolutive (MVP → production)
+Livrables demandés
+Architecture détaillée de l’application
+Schéma de la base de données
+API endpoints principaux
+Structure du projet (front-end / back-end)
+Plan de déploiement
+MVP fonctionnel

@@ -1,0 +1,21 @@
+﻿TECHNICAL REFERENCE // FRONTEND ENGINEERING
+THE CORE PILLARS OF THE WEB
+Every website you visit is built on three fundamental technologies.
+ Understanding how they interact is the difference between a "coder"
+ and a "software engineer." This document explores the roles of HTML,
+ CSS, and JavaScript in the modern ecosystem.
+01. HTML: THE ARCHITECT
+HyperText Markup Language is the skeleton. It defines the meaning and 
+structure of web content. Without HTML, the browser has no idea what is a heading,
+ what is a paragraph, or what is a button. Semantic HTML is the foundation of accessibility (A11y).
+02. CSS: THE DESIGNER
+Cascading Style Sheets represent the skin and clothing. CSS is responsible for
+ the visual presentation. By manipulating the box model, typography, and color,
+ developers turn a raw document into a professional user interface.
+03. JAVASCRIPT: THE ENGINEER
+JavaScript is the nervous system. It provides the behavior and interactivity.
+ Whether it is a simple form validation or a complex single-page application
+ (SPA), JS allows the page to react to user actions without refreshing.
+IMPORTANT: IN THE PROFESSIONAL WORLD, WE AIM FOR "SEPARATION OF CONCERNS."
+KEEP YOUR STRUCTURE IN HTML, YOUR DESIGN IN CSS, AND YOUR LOGIC IN JS.
+“The web is for everyone. Our job is to build it so that it stays that way.”
