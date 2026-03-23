@@ -15,20 +15,20 @@ body{
 .contenair{
     display: flex;
     flex-direction: row;
-    background-color: bisque;
     width: 170vh;
     padding:20px;
     margin-top:60px ;
 }
 .bloc-1{
-    background-color: lab(37.11% 73.78 -80.34 / 0.662);
+    background-color: lch(31.84% 116.16 305.6 / 0.988);
     width: 70%;
     padding:20px;
     position: relative;
 }
 .paragraphe-1{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  'Trebuchet MS', sans-serif;
     font-size: 1.3rem;
+    color: white;
 
 
 }
@@ -39,7 +39,14 @@ body{
 }
 .paragraphe-3{
     font-size: 1.2rem;
+    position: relative;
+    color: hsla(60, 33%, 94%, 0.898);
 
+}
+p{
+    position: relative ;
+    bottom: calc(30%);
+    left: calc(18%);
 }
 .html{
     color: hsl(0, 97%, 34%);
@@ -55,6 +62,14 @@ body{
 }
 .boutton{
     padding: 10px;
+    background-color: hsl(228, 59%, 61%); 
+    border:none;
+    border-radius:5px;
+    color: aliceblue;
+    position: relative;
+    bottom: -20px;
+    
+
 }
 .name{
     text-transform: uppercase;
@@ -64,7 +79,16 @@ body{
 .bloc-2{
     background-color: #a5fb9d;
     width: 30%;
-       position: relative;
+    position: relative;
+}
+.academy{
+    position: absolute;
+    bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 12px;
+    color: #272525e2;
+    font-family: 'Times New Roman', Times, serif;
 }
 .image{
     position: relative;
@@ -87,7 +111,7 @@ body{
     height: 100px;
     position: absolute;
     left: 90px;
-   bottom: calc(9%);
+   bottom: calc(11%);
 }
 .dev-image{
      width: 80px;
@@ -95,4 +119,21 @@ body{
     position: absolute;
     top: 30px;
     left: 50px;
+}
+
+.tiret-1{
+ background-color: #224aeb;
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    left: calc(60%);
+    top: 20px;
+}
+.tiret-2{
+    background-color: #224aeb;
+    position: absolute;
+    width: 30px;
+    height: 6px;
+    left: calc(60%);
+    top: 40px;
 }
