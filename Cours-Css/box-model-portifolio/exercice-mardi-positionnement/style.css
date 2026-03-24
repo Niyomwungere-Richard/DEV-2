@@ -44,21 +44,25 @@ body{
     color: hsla(60, 33%, 94%, 0.898);
 
 }
+span{
+    color: #ff5c5c;
+    font-weight: bold;
+}
 p{
     position: relative ;
     bottom: calc(30%);
     left: calc(18%);
 }
 .html{
-    color: hsl(0, 97%, 34%);
+    color: #ff5c5c;
     font-style: italic;
 }
 .css{
-    color: hsl(0, 97%, 34%);
+    color: #ff5c5c;
     font-style: italic;
 }
 .javascript{
-    color: hsl(0, 97%, 34%);
+    color:  #ff5c5c;
     font-style: italic;
 }
 .boutton{
@@ -99,10 +103,7 @@ p{
     left: calc(85%);
     z-index: 2;
     bottom: calc(-15%);
-    box-shadow: 15px 15px 0 #4b2cc3;
-    outline:10px solid hwb(0 28% 69%);
-    outline-offset: -10px;
-
+  
  }
 .pattern-1{
     width: 100px;
