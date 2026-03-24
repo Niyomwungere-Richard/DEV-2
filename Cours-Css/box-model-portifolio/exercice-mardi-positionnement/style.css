@@ -99,8 +99,8 @@ p{
     left: calc(85%);
     z-index: 2;
     bottom: calc(-15%);
-    box-shadow: 15px 15px 0 white;
-}
+    box-shadow: 15px 15px 0 white ;
+ }
 .pattern-1{
     width: 100px;
     height: 100px;
