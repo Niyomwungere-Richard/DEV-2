@@ -111,3 +111,10 @@ a:hover{
     color: #646363;
     
 }
+.image{
+    width: 44%;
+    position: absolute;
+    z-index: 5;
+    left:50%;
+    top:43px;
+}
