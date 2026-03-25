@@ -3,7 +3,48 @@ margin:0;
 padding: 0;
 box-sizing: border-box;
 }
-body{
+.section{
     position: relative;
+}
+.bloc-1{
+     position: absolute;
+    top:0px;
+    left: 0px;
+   
+    background-color: #131514;
+    width: 60%;
+    height: 100vh;
+}
+.bloc-2{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    background-color: hsl(107, 83%, 50%);
+    width: 40%;
+    height: 100vh;
+}
+.logo{
+    width: 50px;
+}
+.navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    padding: 10px 40px;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: space-around;
     
+}
+ li a{
+text-decoration: none;
+color: whitesmoke;
+text-transform: uppercase;
+}
+a:hover{
+    border-bottom: solid 3px wheat;
 }
