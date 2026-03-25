@@ -12,7 +12,7 @@ box-sizing: border-box;
     left: 0px;
    
     background-color: #131514;
-    width: 60%;
+    width: 70%;
     height: 100vh;
 }
 .bloc-2{
@@ -20,7 +20,7 @@ box-sizing: border-box;
     top:0px;
     right: 0px;
     background-color: hsl(107, 83%, 50%);
-    width: 40%;
+    width: 30%;
     height: 100vh;
 }
 .logo{
@@ -47,4 +47,67 @@ text-transform: uppercase;
 }
 a:hover{
     border-bottom: solid 3px wheat;
+}
+.header{
+    background-color: black;
+    color: aliceblue;
+    padding: 1px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.paragraphe{
+    position: relative;
+    color: whitesmoke;
+    padding-left: 40px;
+    top: 30%;
+}
+.name{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 20px;
+}
+.title{
+    background-color: bisque;
+    padding: 10px;
+    border: 2px solid #4ae04a;
+    color: #333333;
+    width: max-content;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.bouton{
+    background-color: #333333;
+    color: aliceblue;
+    border: 1px aliceblue solid;
+    padding: 2px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.illustration{
+    display: flex;
+    position: relative;
+    top: 40%;
+    gap:60px;
+    padding-left: 40px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nombre{
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    span{
+        color: #3fda10;
+    }
+}
+.footer{
+    position: absolute;
+    top: 95%;
+    right: 30%;
+    text-transform: uppercase;
+    color: #646363;
+    
 }
