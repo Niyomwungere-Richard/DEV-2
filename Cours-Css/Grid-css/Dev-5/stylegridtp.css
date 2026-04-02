@@ -134,8 +134,25 @@ a:hover{
     background-color: hsl(36, 87%, 54%);
     min-height: 50vh;
      padding:20px;
+     
+}
+.content{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
 }
 h2{
    text-align: center;
    margin-top: 10px;
+}
+.skill{
+   height: 10px;
+   background-color: aliceblue;
+    margin-top: 20px;
+}
+
+.skill p{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
 }
