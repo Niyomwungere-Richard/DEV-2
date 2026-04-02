@@ -91,7 +91,6 @@ a:hover{
 #About{
     background-color: antiquewhite;
     height: 100vh;
-    width: 100vw;
     display: grid;
     grid-template-columns: 30% 70%;
    
@@ -130,28 +129,52 @@ a:hover{
     list-style: none;
 }
 #tools{
-    background-color: hsl(36, 87%, 54%);
-    min-height: 50vh;
-     padding:20px;
-     
-}
-.content{
-     display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     gap: 20px;
+    background:  #f5f2e8;
+    padding: 60px 80px;
+    text-align: center;
 }
 h2{
-   text-align: center;
-   margin-top: 10px;
+    text-align: center;
+    font-size: 1.9rem;
+     font-weight: 700; 
+     margin-bottom: 36px; 
 }
-.skill{
-   height: 10px;
-   background-color: aliceblue;
-    margin-top: 20px;
+.skills-grid{
+    background: #fff;
+    border-radius: 16px;
+      padding: 36px 40px;
+       gap: 28px 60px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 900px;
+      margin: 0 auto;
 }
+  .skill-item { 
+    text-align: left;
+ }
 
-.skill p{
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 600;
-}
+    .skills-name img { 
+        width: 28px; 
+        height: 28px; 
+     }
+    .skill-pct { 
+        font-size: 0.88rem; 
+        color: #777; 
+    }
+    .skill-bar {
+      height: 8px;
+      background: #e8e8e8;
+      border-radius: 4px;
+      overflow: hidden;
+    } 
+    
+     .skill-fill {
+      height: 100%;
+      border-radius: 4px;
+     
+    }  
+    .fill-html { background: #e34c26; width: 75%; }
+    .fill-css  { background:  #1a87c6; width: 60%; }
+    .fill-js   { background: #f0db4f; width: 0%; }
+    .fill-gh   { background: #1a1a1a; width: 40%; }
+
