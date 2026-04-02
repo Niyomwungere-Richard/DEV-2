@@ -6,9 +6,8 @@
 .navlinks{
     display:flex;
     justify-content:space-between;
-    width: 100vw;
     position: sticky;
-    padding: 30px;
+    padding: 10px;
     align-items: center;
     top: 10px;
     background-color: aliceblue;
@@ -16,7 +15,7 @@
 }
 .navlinks ul{
      display:flex;
-    gap: 20px;
+     gap: 20px;
     
     text-transform: uppercase;
     list-style: none;
