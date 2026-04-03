@@ -306,7 +306,11 @@
       padding: 70px 80px;
       text-align: center;
     }
-    .contact-section h2 { font-size: 1.9rem; font-weight: 700; margin-bottom: 40px; }
+    .contact-section h2 { 
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
     .contact-wrapper {
       display: flex;
       gap: 60px;
