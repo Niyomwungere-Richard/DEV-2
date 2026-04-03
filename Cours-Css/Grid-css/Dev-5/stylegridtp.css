@@ -231,3 +231,6 @@ h2{
 .link a:hover{
     text-decoration: underline;
 }
+#Contact{
+    background-color: lab(81.75% -34.53 71.99 / 0.708);
+}
