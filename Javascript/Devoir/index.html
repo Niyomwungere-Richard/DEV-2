@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir de Javascript 1</title>
+</head>
+<body>
+
+<script>
+
+let nombreArticles = parseInt(prompt("Combien d'articles avez-vous achetés ?"));
+
+let total = 0;
+
+
+
+if ( nombreArticles <= 0) {
+    alert("Le nombre d'articles doit être supérieur à 0");
+} else {
+   
+    for (let i = 1; i <= nombreArticles; i++) {
+        let prix = parseFloat(prompt("Entrez le prix de l'article " + i + " en Fbu :"));
+        
+       
+        while ( prix <= 0) {
+            prix = parseFloat(prompt("Prix invalide. Le prix doit être > 0. Réessayez pour l'article " + i + " :"));
+        }
+        
+         total = total + prix; 
+    }
+
+    // 3. Appliquer la réduction si total > 100 000 Fbu
+    let montantFinal = total;
+    let reduction = 0;
+
+    if (total > 100000) {
+        reduction = total * 0.10; // 10% de réduction
+        montantFinal = total - reduction;
+        alert("Félicitations ! Vous avez droit à une réduction de 10%");
+    } else{
+        alert(" Ohhh acheter plus Pour avoir le droit à une réduction de 10%")
+    }
+
+    // 4. Afficher le montant final à payer
+    alert("Montant total : " + total + " Fbu\n Réduction : " + reduction + " Fbu\n Montant final à payer : " + montantFinal + " Fbu");
+    
+}
+</script>
+ 
+</body>
+</html>

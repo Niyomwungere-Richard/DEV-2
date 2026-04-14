@@ -3,15 +3,23 @@
     margin:0px;
     box-sizing:border-box;
 }
-.navlinks{
-    display:flex;
-    justify-content:space-between;
+body{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+header{
     position: sticky;
+     top: 0px;
+}
+.navlinks{ 
+    justify-content:space-between;
+    display:flex;
     padding: 10px;
     align-items: center;
     top: 10px;
     background-color: aliceblue;
     border-bottom: #000 1px solid;
+
 }
 .navlinks ul{
      display:flex;
@@ -32,12 +40,9 @@ a:hover{
     width:50px;
 }
 .Home{
-   background-color: blueviolet;
+   background-color: rgb(176,177,226);
    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-  padding: max(20px, 5%);
+  padding: 40px;
 }
 .Paragraphe-1{
     display: flex;
@@ -54,7 +59,7 @@ a:hover{
     color: white;
     font-weight: bold;
 }
-.image{
+.Home .image{
     width: 400px;
     height: 400px;
     overflow: hidden;
