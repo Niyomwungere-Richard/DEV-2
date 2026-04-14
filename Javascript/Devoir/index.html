@@ -12,17 +12,14 @@
 let nombreArticles = parseInt(prompt("Combien d'articles avez-vous achetés ?"));
 
 let total = 0;
-
-
-
 if ( nombreArticles <= 0) {
     alert("Le nombre d'articles doit être supérieur à 0");
 } else {
-   
+
     for (let i = 1; i <= nombreArticles; i++) {
         let prix = parseFloat(prompt("Entrez le prix de l'article " + i + " en Fbu :"));
         
-       
+
         while ( prix <= 0) {
             prix = parseFloat(prompt("Prix invalide. Le prix doit être > 0. Réessayez pour l'article " + i + " :"));
         }
@@ -35,7 +32,7 @@ if ( nombreArticles <= 0) {
     let reduction = 0;
 
     if (total > 100000) {
-        reduction = total * 0.10; // 10% de réduction
+        reduction = total * 0.10; // 10% de réduction 
         montantFinal = total - reduction;
         alert("Félicitations ! Vous avez droit à une réduction de 10%");
     } else{
