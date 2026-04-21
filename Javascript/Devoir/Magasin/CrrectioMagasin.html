@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Magasin</title>
+</head>
+<body>
+
+    <script>
+alert("Bienvenue dans la gestion du magasin");
+alert("Voici les livres disponibles dans le magasin");
+alert("1. Le Petit Prince");
+alert("2. Les Misérables");
+alert("Voulez-vous ajouter un livre ? (Oui/Non)");
+var reponse = prompt("Entrez votre réponse :");
+if (reponse.toLowerCase() === "oui") {
+    var nouveauLivre = prompt("Entrez le nom du livre à ajouter :");
+    alert("Le livre '" + nouveauLivre + "' a été ajouté au magasin.");
+} else {
+    alert("Merci de votre visite !");
+}
+
+    </script>
+</body>
+</html>

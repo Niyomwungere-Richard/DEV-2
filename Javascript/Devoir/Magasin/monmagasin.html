@@ -134,10 +134,10 @@ function  Afficher(){
 }
 
 function Ajouter(){
-   let titre1= document.getElementById("titre1").value;
+   let titre1L= document.getElementById("titre1").value;
    let price= parseInt(document.getElementById("prix1").value);
    let Quantite= parseFloat(document.getElementById("Qte1").value);
-   if(titre=="" ||isNaN(prix) || isNaN(quantite)){
+   if(titre="" ||isNaN(prix) || isNaN(quantite)){
      document.getElementById("idmessage2").innerHTML="Muradutunga ivyo mwinjije sivyo subire murabe neza hama mwongere mugerageze";
      return;
    }
@@ -150,7 +150,7 @@ Livres.push(obj);
 document.getElementById("idmessage2").innerHTML="Vyongeweko neza cane";
 } 
 function vendre(){
-    let titre2= document.getElementById("titre2").value;
+    let titre2L= document.getElementById("titre2").value;
     let Quantite2= parseFloat(document.getElementById("Qte2").value);
     
     let trouve=false;
