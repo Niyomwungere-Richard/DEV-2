@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Magasin</title>
+    <style>
+        body{
+            background-color: hsl(208, 31%, 72%);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-height:100vh;
+            flex-direction: column;
+        }
+        .box{
+            background-color: beige;
+            border-radius: 5px;
+            padding:  10px 5px;
+            margin:10px;
+            width: 50%;
+            h3{
+                text-align:center;
+            }
+            button,input{
+                display:block;
+                margin: 10px 5px;
+                padding:10px;
+                width: 80%;
+                border-radius: 5px;
+                margin-left: 50px;
+            }
+            label{
+                display: block;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+        .hisha{
+            display:none;
+        }
+        #idmessage1{
+            color: red;
+            font-weight: 600;
+            text-align: center;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Ma Librairie</h1>
+    
+    <div class="box" id="Menu">
+         <h3>Menu</h3>  
+         <button onclick="Erekana('Stock')">1 .Afficher les Livres </button>
+         <button onclick="Erekana('Ajout')">2.Ajouter Un Livre</button>
+         <button onclick="Erekana('Vente')">3.Vendre un Livre</button>
+         <button onclick="Erekana('Fin')">4.Sohoka Isomero</button>     
+    </div>
+    <div class="box hisha" id="Stock">
+            <h3>Stock</h3>
+            <div id="liste"></div>
+             <button onclick="Erekana('Menu')">Retour </button>
+              <p id="idmessage1"></p>
+
+    </div>
+    <!-- Formulaire d'ajout -->
+    <div class="box hisha" id="Ajout">
+            <h3>Ajouter un Livre</h3>
+            <label for="titre1">Le Titre</label>
+            <input type="text" id="titre1">
+            <label for="prix1">Le Prix</label>
+            <input type="number" id="prix1">
+            <label for="Qte1">Quantite</label>
+            <input type="number" id="Qte1">
+             <button onclick="Ajouter()">Ajouter </button>
+             <button onclick="Erekana('Menu')">Retour </button>
+               <p id="idmessage2"></p>
+
+
+
+    </div>
+    <div class="box hisha" id="Vente">
+            <h3>Vendre un Livre</h3>
+
+            <label for="titre2">Le Titre</label>
+            <input type="text" id="titre2">
+            <label for="Qte">Quantite</label>
+            <input type="number" id="Qte2">
+             <button onclick="vendre()">Vendre </button>
+             <button onclick="Erekana('Menu')">Retour </button>
+             <p id="idmessage3"></p>
+
+    </div>
+    <div class="box hisha" id="Fin">
+            <h3>Mwakoze kuza  Mw'isomero</h3>
+    </div>
+
+    <script >
+//premierement on doit d'abord creer le classeur de tous les livres 
+let Livres=[];
+function Erekana(id){
+ document.getElementById("Menu").classList.add("hisha");
+ document.getElementById("Stock").classList.add("hisha");
+ document.getElementById("Ajout").classList.add("hisha");
+ document.getElementById("Vente").classList.add("hisha");
+ document.getElementById("Fin").classList.add("hisha");
+
+ document.getElementById(id).classList.remove("hisha");
+ if (id=="Stock") {
+    Afficher();
+    
+ }
+
+}
+
+function  Afficher(){
+    let div= document.getElementById("liste");
+    div.innerHTML="";
+    if (Livres.length==0) {
+        div.innerHTML="Muradutunga Ntagitabo cashoboye kuboneka";
+        
+    }
+
+    for(let i=0;i<Livres.length;i++){
+        div.innerHTML +=Livres[i].titre +" :" +Livres[i].prix +"Fbu :Quantite "+Livres[i].quantite +"br";
+
+    }
+
+}
+
+function Ajouter(){
+   let titre1= document.getElementById("titre1").value;
+   let price= parseInt(document.getElementById("prix1").value);
+   let Quantite= parseFloat(document.getElementById("Qte1").value);
+   if(titre=="" ||isNaN(prix) || isNaN(quantite)){
+     document.getElementById("idmessage2").innerHTML="Muradutunga ivyo mwinjije sivyo subire murabe neza hama mwongere mugerageze";
+     return;
+   }
+let obj={
+    titre:titre1,
+    prix:price,
+    quantite:Quantite
+};
+Livres.push(obj);
+document.getElementById("idmessage2").innerHTML="Vyongeweko neza cane";
+} 
+function vendre(){
+    let titre2= document.getElementById("titre2").value;
+    let Quantite2= parseFloat(document.getElementById("Qte2").value);
+    
+    let trouve=false;
+    for(let i=0; i<Livres.length;i++){
+        if(Livres[i].titre==titre2){
+            trouve=true;
+
+            if(Livres[i].quantite>=Quantite2){
+                Livres[i].quantite -=Quantite2;
+                let total=Quantite2*Livres[i].prix;
+                document.getElementById("idmessage3").innerHTML="Vendu avec succes. Total: " + total;
+            }else{
+                document.getElementById("idmessage3").innerHTML= "Nta Biriyo Muri stocket Bikwiye n'imugabanye commande";
+            }
+            break;
+        }
+        if(trouve==false){
+            document.getElementById("idmessage3").innerHTML="Nta gitabo c'iryo zina kiboneka muri stock";
+        }
+    }
+}
+function quitter(){
+    Erekana("Fin");
+}
+
+    </script>
+</body>
+</html>

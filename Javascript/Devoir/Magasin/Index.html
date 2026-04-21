@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+ <title>Ma Librairie</title>
+<link rel="stylesheet" href="styleTP.css">
+   
+</head>
+
+<body>
+
+<h1> Ma Librairie</h1>
+
+<div class="box" id="menu">
+    <h1>Menu</h1>
+    <button onclick="show('stock')">1. Affiche tous les livres</button>
+    <button onclick="show('ajout')">2. Achet un livre</button>
+    <button onclick="show('vente')">3. Vendre un livre</button>
+    <button onclick="quitter()">4. Quitter le Bibliotheque</button>
+</div>
+
+<div class="box hidden" id="stock">
+    <h1>Stock</h1>
+    <div id="liste"></div>
+    <button onclick="show('menu')">Retour</button>
+</div>
+
+<div class="box hidden" id="ajout">
+    <h3>Ajouter Livre</h3>
+
+    Titre:
+    <input type="text" id="t1">
+
+    Prix:
+    <input type="number" id="p1">
+
+    Quantité:
+    <input type="number" id="q1">
+
+    <button onclick="ajouter()">Ajouter</button>
+    <button onclick="show('menu')">Retour</button>
+
+    <p id="msg1"></p>
+</div>
+
+<div class="box hidden" id="vente">
+    <h3>Vendre Livre</h3>
+
+    Titre:
+    <input type="text" id="t2">
+
+    Quantité:
+    <input type="number" id="q2">
+
+    <button onclick="vendre()">Vendre</button>
+    <button onclick="show('menu')">Retour</button>
+
+    <p id="msg2"></p>
+</div>
+
+<div class="box hidden" id="fin">
+    <h3>Au revoir</h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

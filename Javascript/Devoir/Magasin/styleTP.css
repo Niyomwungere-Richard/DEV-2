@@ -1,0 +1,43 @@
+
+        body {
+            font-family: Arial;
+            background-color: hsl(0, 29%, 55%);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height:100vh;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid gray;
+            border-radius:30px;
+            width: 50vw;
+        }
+
+        button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+  

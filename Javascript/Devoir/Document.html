@@ -1,0 +1,145 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire de tâches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { text-align: center; color: #333; }
+        #ajout-zone {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #nouvelle-tache {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        
+        }
+        button:hover { background: #45a049; }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        li.terminee span {
+            text-decoration: line-through;
+            color: #888;
+        }
+       .texte-tache {
+            flex: 1;
+        }
+       .btn-suppr {
+            background: #f44336;
+        }
+       .btn-suppr:hover {
+            background: #da190b;
+        }
+       .checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mes Tâches</h1>
+
+    <div id="ajout-zone">
+        <input type="text" id="nouvelle-tache" placeholder="Ajouter une tâche...">
+        <button onclick="ajouterTache()">Ajouter</button>
+    </div>
+
+    <ul id="liste-taches"></ul>
+
+    <script>
+        let taches = [];
+
+        function afficherTaches() {
+            const liste = document.getElementById('liste-taches');
+            liste.innerHTML = ''; // On vide la liste avant de la reconstruire
+
+            taches.forEach((tache, index) => {
+                const li = document.createElement('li');
+                if (tache.terminee) li.classList.add('terminee');
+
+                // 1. Checkbox pour marquer terminé
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'checkbox';
+                checkbox.checked = tache.terminee;
+                checkbox.onclick = () => toggleTerminee(index);
+
+                // 2. Texte de la tâche
+                const span = document.createElement('span');
+                span.className = 'texte-tache';
+                span.textContent = `${index + 1}. ${tache.texte}`;
+
+                // 3. Bouton supprimer
+                const btnSuppr = document.createElement('button');
+                btnSuppr.textContent = 'Supprimer';
+                btnSuppr.className = 'btn-suppr';
+                btnSuppr.onclick = () => supprimerTache(index);
+
+                li.appendChild(checkbox);
+                li.appendChild(span);
+                li.appendChild(btnSuppr);
+                liste.appendChild(li);
+            });
+        }
+
+        function ajouterTache() {
+            const input = document.getElementById('nouvelle-tache');
+            const texte = input.value.trim();
+
+            if (texte!== '') {
+                taches.push({ texte: texte, terminee: false });
+                input.value = ''; // On vide l'input
+                afficherTaches(); // On réaffiche la liste mise à jour
+            }
+        }
+
+        function toggleTerminee(index) {
+            taches[index].terminee =!taches[index].terminee; // Inverse true/false
+            afficherTaches();
+        }
+
+        function supprimerTache(index) {
+            taches.splice(index, 1); // Supprime 1 élément à l'index donné
+            afficherTaches();
+        }
+
+        // Permet d'ajouter avec la touche Entrée
+        document.getElementById('nouvelle-tache').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') ajouterTache();
+        });
+
+        // Premier affichage au chargement
+        afficherTaches();
+    </script>
+</body>
+</html>
