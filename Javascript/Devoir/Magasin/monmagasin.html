@@ -44,8 +44,23 @@
             font-weight: 600;
             text-align: center;
         }
-
-
+        .livre-card {
+            background: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 3px solid orange;
+            }
+            #liste{
+                text-align:center;
+                color:red;
+                font-weight:700;
+            }
+            #idmessage1,#idmessage2,#idmessage3{
+                text-align: center;
+                font-size: 2.3rem;
+                color: green;
+            }
 
 
 
@@ -100,7 +115,7 @@
             <h3>Mwakoze kuza  Mw'isomero</h3>
     </div>
 
-    <script >
+    <script src="">
 //premierement on doit d'abord creer le classeur de tous les livres 
 let Livres=[];
 function Erekana(id){
@@ -127,7 +142,7 @@ function  Afficher(){
     }
 
     for(let i=0;i<Livres.length;i++){
-        div.innerHTML +=Livres[i].titre +" :" +Livres[i].prix +"Fbu :Quantite "+Livres[i].quantite +"br";
+        div.innerHTML +=Livres[i].titre +" :" +Livres[i].prix +"Fbu :Quantite "+Livres[i].quantite +"<br>";
 
     }
 
@@ -137,12 +152,18 @@ function Ajouter(){
    let titre1L= document.getElementById("titre1").value;
    let price= parseInt(document.getElementById("prix1").value);
    let Quantite= parseFloat(document.getElementById("Qte1").value);
-   if(titre="" ||isNaN(prix) || isNaN(quantite)){
-     document.getElementById("idmessage2").innerHTML="Muradutunga ivyo mwinjije sivyo subire murabe neza hama mwongere mugerageze";
+   if(titre1L==="" ||isNaN(price) || isNaN(Quantite)){
+     document.getElementById("idmessage2").div.innerHTML += `
+  <div class="livre-card">
+    <strong>${Livres[i].titre}</strong> — 
+    ${Livres[i].prix} Fbu — 
+    Quantité : ${Livres[i].quantite}
+  </div>
+`;
      return;
    }
 let obj={
-    titre:titre1,
+    titre:titre1L,
     prix:price,
     quantite:Quantite
 };
@@ -155,7 +176,7 @@ function vendre(){
     
     let trouve=false;
     for(let i=0; i<Livres.length;i++){
-        if(Livres[i].titre==titre2){
+        if(Livres[i].titre==titre2L){
             trouve=true;
 
             if(Livres[i].quantite>=Quantite2){
@@ -167,10 +188,11 @@ function vendre(){
             }
             break;
         }
-        if(trouve==false){
+      
+    }
+      if(trouve == false){
             document.getElementById("idmessage3").innerHTML="Nta gitabo c'iryo zina kiboneka muri stock";
         }
-    }
 }
 function quitter(){
     Erekana("Fin");

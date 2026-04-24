@@ -1,0 +1,319 @@
+/* Variables de couleurs */
+:root {
+    --primary: #1a73e8;
+    --primary-hover: #1557b0;
+    --bg-body: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-main: #333;
+    --text-muted: #666;
+    --success: #28a745;
+    --error: #dc3545;
+    --fav-bg: #fff9e6;
+    --fav-border: #f9a825;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 20px 0;
+    color: var(--primary);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Conteneur de section */
+.section {
+    background-color: var(--bg-card);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Formulaires */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Cartes de contact */
+.contact-card {
+    background: #fdfdfd;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateX(5px);
+}
+
+.contact-card.favori {
+    background-color: var(--fav-bg);
+    border-left: 5px solid var(--fav-border);
+}
+
+.contact-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-nom {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contact-tel {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Checkbox Favoris */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.favori-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Messages */
+.msg {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.msg-succes {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.msg-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#MessageFavori {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 250px;
+}
+
+/* Animation pour l'étoile */
+.contact-favori-star {
+    color: var(--fav-border);
+    font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .section {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+/* body{
+    font-family:sans-serif;
+    background-color: #9a9ace;
+    padding: 30px;
+    max-width: 100vw;
+   max-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+h1{
+    text-align: center;
+    color: #1a73e8;
+}
+.section{
+    background-color: antiquewhite;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius:15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 60%;
+    h2{
+        margin: top 0;
+        color: #333;
+        text-align: center;
+    }
+
+    input,button{
+        display:block;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 15px;
+        margin: auto;
+        width: 60%;
+        margin-top: 10px;
+        padding-left: 50px;
+        
+    }
+    button:hover{
+        background-color: aqua;
+        transition: 3s;
+       
+    }
+}
+.contact-card{
+    background: #f8f9fa;
+    padding: 13px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 4px solif hsl(220, 7%, 16%);
+    
+}
+.contact-card.favori{
+    border-left-color: #f9a825;
+    background: #fff8e1;
+
+}
+.contact-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.contact.info{
+    flex:1;
+
+}
+.contact-nom{
+    font-weight: bold;
+    font-size:18px
+}
+.contact-tel{
+    color: #666;
+    font-size: 14px;
+}
+.checkbox-label{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:8px;
+    cursor: pointer;
+    font-size:14px;
+    color: #666;
+ }
+.favori.checkbox{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+.msg{
+    margin-top:10px;
+    padding: 8px;
+    border-radius: 8px;
+    font: 14px;
+
+}
+.msg-succes{
+    background-color: #d4edda;
+    color:#155724;
+}
+.msg-error{
+    background-color: #f8d7da;
+    color:#721c24;
+}
+#MessageFavori{
+    margin-bottom: 20px;
+} */

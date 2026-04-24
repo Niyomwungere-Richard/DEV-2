@@ -8,17 +8,82 @@
 <body>
 
     <script>
-alert("Bienvenue dans la gestion du magasin");
-alert("Voici les livres disponibles dans le magasin");
-alert("1. Le Petit Prince");
-alert("2. Les Misérables");
-alert("Voulez-vous ajouter un livre ? (Oui/Non)");
-var reponse = prompt("Entrez votre réponse :");
-if (reponse.toLowerCase() === "oui") {
-    var nouveauLivre = prompt("Entrez le nom du livre à ajouter :");
-    alert("Le livre '" + nouveauLivre + "' a été ajouté au magasin.");
-} else {
-    alert("Merci de votre visite !");
+/*
+
+Un magasin de livres souhaite créer un programme à l'usage de ses vendeurs.
+
+Le système stocke les données dans une structure regroupant des objets "Livre", où chacun possède les propriétés suivantes : *titre*, *prix* et *quantité*. 
+À l'ouverture, le programme présente le menu suivant :
+
+1. Voir les livres
+2. Acheter un livre
+3. Vendre un livre
+4. Quitter
+
+*Les fonctions à implémenter :*
+
+* *afficherStock()* : Parcourt les données pour afficher les détails de chaque livre. Si la bibliothèque est vide, un message correspondant doit s'afficher.
+* *ajouterLivre()* : Permet de saisir les informations d'un nouvel livre. Si le titre existe déjà, le programme augmente seulement sa quantité au lieu de créer un doublon.
+* *vendreLivre()* : Recherche un livre par son titre et vérifie la disponibilité. Si le stock est suffisant, il diminue la quantité et affiche le total à payer ; sinon, il signale que le stock est épuisé.
+
+*Contraintes de navigation :*
+
+* Si un choix est invalide (par exmple 9), le programme affiche un message d'erreur et relance le menu.
+* En cas d'erreur de sélection, l'utilisateur a la possibilité de retourner au menu principal en tapant *0*.
+* Après chaque action terminée, le système revient automatiquement au menu principal, jusqu'à ce que l'utilisateur choisisse de quitter.
+
+*/
+
+// Structure de données pour stocker les livres
+let stock = [
+    { titre: "Le Petit Prince", prix: 10, quantite: 5 },
+    { titre: "1984", prix: 15, quantite: 3 },
+    { titre: "Madame Bovary", prix: 12, quantite: 7 }
+];
+function afficherStock() {
+    if (stock.length === 0) {
+        console.log("Le stock est vide.");
+    } else {    
+        console.log("Stock de livres :");
+        stock.forEach(livre => {
+            console.log(`Titre: ${livre.titre}, Prix: ${livre.prix}Fbu, Quantité: ${livre.quantite}`);
+        });
+    }
+}
+function ajouterLivre() {
+
+    let titre = prompt("Entrez le titre du livre :");
+    let prix = parseFloat(prompt("Entrez le prix du livre :"));
+    let quantite = parseInt(prompt("Entrez la quantité du livre :"));
+
+    // Vérifier si le livre existe déjà
+    let livreExistant = stock.find(l => l.titre === titre);
+    if (livreExistant) {
+        // Augmenter la quantité
+        livreExistant.quantite += quantite;
+        console.log(`Le livre "${titre}" a été mis à jour. Quantité actuelle : ${livreExistant.quantite}`);
+    } else {
+        // Ajouter le nouveau livre
+        stock.push({ titre, prix, quantite });
+        console.log(`Le livre "${titre}" a été ajouté au stock.`);
+    }
+}
+function vendreLivre() {
+    let titre = prompt("Entrez le titre du livre à vendre :");
+    let quantiteVoulue = parseInt(prompt("Entrez la quantité souhaitée :"));
+
+    let livre = stock.find(l => l.titre === titre);
+    if (livre) {
+        if (livre.quantite >= quantiteVoulue) {
+            livre.quantite -= quantiteVoulue;
+            let total = quantiteVoulue * livre.prix;
+            console.log(`Vente effectuée. Total à payer : ${total}Fbu`);
+        } else {
+            console.log("Stock insuffisant.");
+        }
+    } else {
+        console.log("Le livre n'existe pas.");
+    }
 }
 
     </script>
