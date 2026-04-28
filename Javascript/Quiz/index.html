@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Bienvenue </title>
+</head>
+<style>
+    body{
+        background-color: hsl(208, 31%, 72%);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:100vh;
+        flex-direction: column;
+    }
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+    }
+</style>
+<body>
+  <h1> Bienvenue sur le quiz! </h1>
+    
+    <script>
+
+const quiz = [
+    {
+        texte: "Quelle est la capitale économique du Burundi?",
+        options: ["Gitega", "Bujumbura", "Ngozi"],
+        reponseCorrecte: 1
+    },
+    {
+        texte: "Combien font 6 × 7?",
+        options: ["42", "36", "48"],
+        reponseCorrecte: 0
+    },
+    {
+        texte: "Quel langage s'exécute dans le navigateur?",
+        options: ["Python", "JavaScript", "C++"],
+        reponseCorrecte: 1
+    }
+];
+
+
+function afficherQuestion(question) {
+    let texteComplet = question.texte + "\n\n";
+    
+    question.options.forEach((option, index) => {
+        texteComplet += `${index + 1}. ${option}\n`;
+    });
+    return texteComplet;
+}
+
+
+function verifierReponse(question, choix) {
+ 
+    return choix - 1 === question.reponseCorrecte;
+}
+
+
+function jouerQuiz() {
+    let score = 0;
+
+    for (let i = 0; i < quiz.length; i++) {
+        let questionTexte = `Question ${i + 1}/${quiz.length}\n\n`;
+        questionTexte += afficherQuestion(quiz[i]);
+
+        let reponseUtilisateur = parseInt(prompt(questionTexte + "\nTa réponse : 1, 2 ou 3?"));
+
+        if (verifierReponse(quiz[i], reponseUtilisateur)) {
+            alert("Correct! ");
+            score++;
+        } else {
+            let bonneRep = quiz[i].options[quiz[i].reponseCorrecte];
+            alert(`Faux \nLa bonne réponse était : ${bonneRep}`);
+        }
+    }
+
+   
+    let message = "";
+    if (score === quiz.length) message = "Parfait!";
+    else if (score >= quiz.length / 2) message = "Bien joué!";
+    else message = "Tu peux faire mieux!";
+
+    alert(`Score : ${score}/${quiz.length}\n${message}`);
+}
+
+// Pour lancer le quiz
+jouerQuiz();
+    
+    </script>
+</body>
+</html>

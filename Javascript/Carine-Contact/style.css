@@ -1,6 +1,6 @@
 /* Variables de couleurs */
 :root {
-    --primary: #1a73e8;
+    --primary: hwb(214 5% 43%);
     --primary-hover: #1557b0;
     --bg-body: #f0f2f5;
     --bg-card: #ffffff;
